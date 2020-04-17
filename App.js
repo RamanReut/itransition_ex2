@@ -26,7 +26,7 @@ var passwords = {
 var existUser = [0, 1];
 var idCounter = 2;
 
-app.use(express.static(path.join(__dirname+'/build')));
+app.use(express.static(path.join(__dirname+'/siteSrc/build')));
 
 app.use('/api/*', bodyParser.json());
 
@@ -124,7 +124,7 @@ app.post('/api/login', (req, resp) => {
 });
 
 app.get('*', (req,res) =>{
-    res.sendFile(path.join(__dirname+'/build/index.html'));
+    res.sendFile(path.join(__dirname+'/siteSrc/build/index.html'));
 });
 
 app.listen(process.env.PORT);
